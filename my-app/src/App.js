@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <TitleText/>
       <SearchForm/>
-      <SearchBy name_One = 'TITLE' name_Two = 'GENRE' className = 'button small'/>
+      <SearchBy name_One = 'TITLE' name_Two = 'GENRE' />
     </div>
   );
 }
