@@ -1,0 +1,22 @@
+.selectBtn {
+  color: #fff;
+  background-color: rgba(128, 128, 128, 0.5);
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+
+  &.active{
+    background-color: rgb(220, 0, 78);
+  }
+  &.right_borderRadius{
+    border-radius: 4px 0 0 4px;
+  }
+  &.left_borderRadius{
+    border-radius: 0 4px 4px 0 ;
+  }
+}
+
+input[type=radio] {
+  display: none;
+}
