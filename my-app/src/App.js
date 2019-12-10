@@ -4,6 +4,7 @@ import SearchForm from "./Components/searchForm";
 import TitleText from "./Components/titleText/title";
 import SearchBy from "./Components/searchBy/search";
 import CardContainer from "./Components/cardContainer/cardContainer";
+import MovieCard from "./Components/movieCard/movieCard";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
     "vote_count": 9,
     "release_date": "2020-05-01",
     "poster_path": "https://image.tmdb.org/t/p/w500/ldoY4fTZkGISMidNw60GHoNdgP8.jpg",
-    "overview": "The third film based on Marvel's Guardians of the Galaxy.",
+    "overview": "The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.",
     "budget": 0,
     "revenue": 0,
     "genres": [
@@ -23,7 +24,7 @@ function App() {
       "Adventure",
       "Science Fiction"
     ],
-    "runtime": null
+    "runtime": '200'
   };
 
   return (
@@ -32,6 +33,7 @@ function App() {
       <SearchForm/>
       <SearchBy name_One = 'TITLE' name_Two = 'GENRE' />
       <CardContainer {...film}/>
+      <MovieCard {...film}/>
     </div>
   );
 }

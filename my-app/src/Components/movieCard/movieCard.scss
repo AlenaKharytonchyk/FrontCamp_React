@@ -1,0 +1,52 @@
+@import '../../mixins';
+
+.movie-container{
+  display: flex;
+  background-color: $card_bg-color;
+  color: $card_text-color;
+  max-width: 60%;
+  padding: 30px;
+  img{
+    height: 25em;
+    padding-right: 4em;
+  }
+  .title-section{
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    text-align: left;
+    .title{
+      padding-right: 1em;
+    }
+    .rate{
+      color: $rate-color;
+      width: 2em;
+      height: 2em;
+      border: solid 1px $card_text-color;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+  .number-block{
+    display: flex;
+    section{
+      padding-right: 40px;
+    }
+    .number{
+      color: $numbers-color;
+      font-size: 1.5em;
+      padding-right: 10px;
+    }
+    .text{
+      color: $card_text-color;
+    }
+  }
+  .overview{
+    text-align: justify;
+  }
+  &>section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
