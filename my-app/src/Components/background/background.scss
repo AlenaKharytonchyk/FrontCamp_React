@@ -1,0 +1,13 @@
+@import '../../mixins';
+
+.background {
+  text-align: center;
+  background-color: $card_bg-color ;
+  opacity: 0.3;
+  filter: blur(1.5px);
+  img {
+    max-width: 120px;
+    max-height: 180px;
+  }
+}
+
