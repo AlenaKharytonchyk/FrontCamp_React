@@ -1,0 +1,12 @@
+@import '../../mixins';
+
+.footer{
+  background: $footer_bg-color;
+  color: $numbers-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span:first-child{
+    font-weight: 700;
+  }
+}

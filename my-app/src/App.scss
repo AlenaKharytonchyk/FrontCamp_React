@@ -9,9 +9,9 @@
 
   .main-container{
     display: grid;
-    grid-template-rows: 25em 4em auto;
+    grid-template-rows: 25em 4em auto 4em;
     background-color: $card_bg-color;
-    width: 80vw;
+    //width: 80vw;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -45,7 +45,7 @@
       background-color: $layout_bg-color;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      //justify-content: space-around;
       width: inherit;
     }
     .cards-section{
@@ -56,5 +56,9 @@
       min-height: 32em;
     }
   }
+}
+.temp-devider{
+  background: white;
+  height: 20px;
 }
 

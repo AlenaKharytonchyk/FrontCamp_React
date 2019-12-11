@@ -2,9 +2,9 @@ import React from 'react';
 import './searchResult.scss';
 
 const SearchResultString = (props) => {
-  const {result_amount} = props;
+  const {resultAmount} = props;
   return(
-    <span className='result-amount'>{result_amount} movie found</span>
+    <span className='result-amount'>{resultAmount} movie found</span>
   )
 };
  export default SearchResultString;

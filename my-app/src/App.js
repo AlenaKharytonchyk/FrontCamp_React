@@ -1,36 +1,34 @@
 import React from 'react';
 import './App.scss';
-import MovieCard from "./Components/movieCard/movieCard";
 import MovieInfo from "./pages/Movie_info";
 import SearchPage from "./pages/Search";
+import NotFound from "./pages/NotFound";
 
-function App() {
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {movies: []};
+  }
 
-  const film =  {
-    "id": 447365,
-    "title": "Guardians of the Galaxy Vol. 3",
-    "tagline": "",
-    "vote_average": 0,
-    "vote_count": 9,
-    "release_date": "2020-05-01",
-    "poster_path": "https://image.tmdb.org/t/p/w500/ldoY4fTZkGISMidNw60GHoNdgP8.jpg",
-    "overview": "The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.The third film based on Marvel's Guardians of the Galaxy.",
-    "budget": 0,
-    "revenue": 0,
-    "genres": [
-      "Action",
-      "Adventure",
-      "Science Fiction"
-    ],
-    "runtime": '200'
-  };
+  componentDidMount() {
+    fetch("https://reactjs-cdp.herokuapp.com/movies?limit=30")
+      .then(req => req.json())
+      .then(({data}) => this.setState({"movies": data}))
+  }
 
-  return (
+  render () {
+    const {movies} = this.state;
+    return (
     <div className="App">
-      <SearchPage film={film}/>
-      {/*<MovieInfo film={film}/>*/}
+    <SearchPage movies={movies}/>
+    <div className='temp-devider'></div>
+    <MovieInfo movies={movies}/>
+    <div className='temp-devider'></div>
+    <NotFound/>
     </div>
   );
+}
+
 }
 
 export default App;

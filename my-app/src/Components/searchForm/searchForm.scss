@@ -1,21 +1,38 @@
 @import '../../mixins';
 
-input[type="text"]{
-  background-color: $card_bg-color;
-  border: none;
-  border-radius: 4px;
-  outline: none;
-  height: 4em;
-  width: 47em;
-  color: $card_text-color;
-  padding: 0;
-  padding-left: 10px;
-  font-size: 1em;
-  font-family: $raleway;
-}
-form{
+.search-form {
   display: flex;
-  &>p{
+  & > input {
     padding-right: 1em;
   }
+
+  .search-field {
+    margin-right: auto;
+    flex-grow: 3;
+
+    input[type="text"] {
+      background-color: $card_bg-color;
+      border: none;
+      border-radius: 4px;
+      outline: none;
+      height: 4em;
+      max-width: 47em;
+      min-width: 20em;
+      width: 95%;
+      color: $card_text-color;
+      padding: 0;
+      padding-left: 10px;
+      font-size: 1em;
+      font-family: $raleway;
+    }
+  }
+
+  .search-btn {
+    margin-left: auto;
+  }
+
+  input {
+    cursor: pointer;
+  }
 }
+

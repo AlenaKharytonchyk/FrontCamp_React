@@ -2,9 +2,9 @@ import React from 'react';
 import '../searchResultString/searchResult.scss';
 
 const SearchResultBy = (props) => {
-  const {search_by, value} = props;
+  const {searchBy, value} = props;
   return(
-    <span className='result-amount'>Films by {value} {search_by}</span>
+    <span className='result-amount'>Films by {value} Genre</span>
   )
 };
 export default SearchResultBy;

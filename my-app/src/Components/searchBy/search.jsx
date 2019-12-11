@@ -34,7 +34,8 @@ class SearchBy extends React.Component {
     }
 
     return (
-        <p><span>{this.title}</span>
+        <p>
+          <span>{this.title}</span>
           <label className = {'selectBtn right_borderRadius '+className_One} htmlFor={this.name_One}>{this.name_One}</label>
           <input id = {this.name_One}
                  type="radio"

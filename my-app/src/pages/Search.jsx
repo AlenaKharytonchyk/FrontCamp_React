@@ -3,11 +3,10 @@ import SearchForm from "../Components/searchForm/searchForm";
 import TitleText from "../Components/titleText/title";
 import SearchBy from "../Components/searchBy/search";
 import CardContainer from "../Components/cardContainer/cardContainer";
-import MovieCard from "../Components/movieCard/movieCard";
 import SearchResultString from "../Components/searchResultString/searchResult";
-import NoResults from "../Components/notFound/notFound";
+import Footer from "../Components/footer/footer";
 
-function SearchPage({film}) {
+function SearchPage({movies}) {
 
    return (
       <main className='main-container'>
@@ -19,23 +18,13 @@ function SearchPage({film}) {
           </div>
         </header>
         <section className='search-by'>
-          <SearchResultString/>
+          <SearchResultString resultAmount={movies.length}/>
           <SearchBy name_One = 'RELEASE DATE' name_Two = 'RATING' title='SORT BY'/>
         </section>
         <section className='cards-section'>
-          <NoResults/>
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
-          {/*<CardContainer {...film}/>*/}
+          {movies.map(movie => <CardContainer key={movie.id} {...movie}/>)}
         </section>
+        <Footer/>
       </main>
   );
 }

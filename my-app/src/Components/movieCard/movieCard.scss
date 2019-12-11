@@ -2,7 +2,6 @@
 
 .movie-container{
   display: flex;
-  background-color: $card_bg-color;
   color: $card_text-color;
   padding: 0 30px;
   position: relative;
@@ -19,13 +18,22 @@
     .title{
       padding-right: 1em;
     }
-    .rate{
-      color: $rate-color;
-      width: 2em;
-      border: solid 1px $card_text-color;
-      border-radius: 50%;
-      padding: 0.3em 0;
-      text-align: center;
+    .rate {
+      display:inline-block;
+      line-height:0px;
+      border-radius:50%;
+      border:2px solid $rate-border-color;
+      font-size:32px;
+
+      span {
+        display:inline-block;
+        padding-top:50%;
+        padding-bottom:50%;
+        margin-left:8px;
+        margin-right:8px;
+        color: $rate-text-color;
+        font-family: Arial, sans-serif;
+      }
     }
   }
   .number-block{

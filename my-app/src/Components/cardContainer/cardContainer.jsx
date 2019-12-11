@@ -7,7 +7,7 @@ const CardContainer = (props) => {
     <div className='card-container' id = {id}>
       <img src={poster_path} alt={title}/>
       <span>{title}</span>
-      <span>{genres.join(' & ')}</span>
+      <span>{genres.length ? genres.join(' & ') : null}</span>
       <span>{ (new Date(release_date)).getFullYear()}</span>
     </div>
   );

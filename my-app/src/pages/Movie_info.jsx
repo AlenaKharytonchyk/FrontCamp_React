@@ -1,32 +1,31 @@
 import React from 'react';
-import SearchBy from "../Components/searchBy/search";
 import CardContainer from "../Components/cardContainer/cardContainer";
 import MovieCard from "../Components/movieCard/movieCard";
 import SearchResultBy from "../Components/searchResult_forMovie_page/searchResultBy";
+import Footer from "../Components/footer/footer";
 
-function MovieInfo({film}) {
+function MovieInfo({movies}) {
+  const [movie] = movies;
+  // const movie = movies.find(movie => movie.genres.length);
+  if(!movie){
+    return null
+  }
 
+  const sameGenreMovies = movies.filter(({id, genres}) => movie.id !== id && movie.genres.filter(genre => genres.includes(genre)).length);
+  console.log(sameGenreMovies)
   return (
     <main className='main-container'>
       <header>
-        <MovieCard {...film}/>
+        <MovieCard {...movie}/>
       </header>
       <section className='search-by'>
-        <SearchResultBy/>
+        <SearchResultBy value={movie.genres.join(' & ')}/>
       </section>
       <section className='cards-section'>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
-        <CardContainer {...film}/>
+        {/*{movies.map(elem => <CardContainer {...elem}/>)}*/}
+        {sameGenreMovies.map(elem => <CardContainer key={movie.id + '-info'} {...elem}/>)}
       </section>
+      <Footer/>
     </main>
   );
 }
