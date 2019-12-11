@@ -4,8 +4,8 @@ import './search.scss';
 class SearchBy extends React.Component {
   constructor(props){
     super(props);
-    const {name_One, name_Two} = props;
-
+    const {name_One, name_Two, title} = props;
+    this.title = title;
     this.name_One = name_One;
     this.name_Two = name_Two;
 
@@ -34,22 +34,23 @@ class SearchBy extends React.Component {
     }
 
     return (
-        <p>
+        <p><span>{this.title}</span>
+          <label className = {'selectBtn right_borderRadius '+className_One} htmlFor={this.name_One}>{this.name_One}</label>
           <input id = {this.name_One}
                  type="radio"
                  value={this.name_One}
                  checked={this.state.selectedOption === this.name_One}
                  onChange={this.radioChange} />
-                 <label className = {'selectBtn right_borderRadius '+className_One} htmlFor={this.name_One}>{this.name_One}</label>
 
-          <input id = {this.name_Two}
+          <label className = {'selectBtn left_borderRadius '+className_Two}
+                 htmlFor={this.name_Two}>{this.name_Two}
+          </label>
+           <input id = {this.name_Two}
                  type="radio"
                  value={this.name_Two}
                  checked={this.state.selectedOption === this.name_Two}
                  onChange={this.radioChange}/>
-                 <label className = {'selectBtn left_borderRadius '+className_Two}
-                        htmlFor={this.name_Two}>{this.name_Two}
-                 </label>
+
         </p>
     );
   }

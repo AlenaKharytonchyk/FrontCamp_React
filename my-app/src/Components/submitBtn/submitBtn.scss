@@ -1,13 +1,15 @@
+@import '../../mixins';
+
 .button {
   color: #fff;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: $numbers-color;
   height: 3em;
   width: 7em;
   border: none;
   border-radius: 4px;
 
   &.active{
-    background-color: rgb(220, 0, 78);
+    background-color: $numbers-color;
   }
   &.small{
     height: 1.5vw;

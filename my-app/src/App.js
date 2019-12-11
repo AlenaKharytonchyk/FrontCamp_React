@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import SearchForm from "./Components/searchForm";
+import './App.scss';
+import SearchForm from "./Components/searchForm/searchForm";
 import TitleText from "./Components/titleText/title";
 import SearchBy from "./Components/searchBy/search";
 import CardContainer from "./Components/cardContainer/cardContainer";
@@ -29,11 +29,32 @@ function App() {
 
   return (
     <div className="App">
-      <TitleText/>
-      <SearchForm/>
-      <SearchBy name_One = 'TITLE' name_Two = 'GENRE' />
-      <CardContainer {...film}/>
-      <MovieCard {...film}/>
+      <main className='main-container'>
+        <header>
+          <div>
+            <TitleText/>
+            <SearchForm/>
+            <SearchBy name_One = 'TITLE' name_Two = 'GENRE' title='SEARCH BY'/>
+          </div>
+        </header>
+        <section className='search-by'>7 movies found
+          <SearchBy name_One = 'RELEASE DATE' name_Two = 'RATING' title='SORT BY'/>
+        </section>
+        <section className='cards-section'>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          <CardContainer {...film}/>
+          {/*<MovieCard {...film}/>*/}
+        </section>
+      </main>
     </div>
   );
 }

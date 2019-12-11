@@ -1,5 +1,6 @@
 import React from 'react';
-import SubmitButton from "./submitBtn/submitBtn";
+import SubmitButton from "../submitBtn/submitBtn";
+import './searchForm.scss';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -22,10 +23,9 @@ class SearchForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <p><label><input type="text" name="search" value={this.state.search}
+        <p><label><input placeholder="What are you looking for?" type="text" name="search" value={this.state.search}
                                  onChange={this.onChangeSearch}/></label></p>
         <p><SubmitButton name = 'SEARCH' className = 'button active'/></p>
-
       </form>
     );
   }

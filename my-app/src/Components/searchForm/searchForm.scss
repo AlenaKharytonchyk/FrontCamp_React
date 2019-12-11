@@ -1,0 +1,18 @@
+@import '../../mixins';
+
+input[type="text"]{
+  background-color: $layout_bg-color;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  height: 3em;
+  width: 25em;
+  color: $card_text-color;
+  padding: 0;
+}
+form{
+  display: flex;
+  &>p{
+    padding-right: 1em;
+  }
+}
