@@ -2,6 +2,7 @@
 
 .card-container{
   margin-left: 20px;
+  margin-bottom: 20px;
   background-color: $card_bg-color ;
   color: $card_text-color;
   display: flex;
@@ -12,6 +13,7 @@
   border: solid 10px $card_bg-color;
   img{
     height: 30em;
+    padding-bottom: 10px;
   }
   span {
     font-size: 0.9em;

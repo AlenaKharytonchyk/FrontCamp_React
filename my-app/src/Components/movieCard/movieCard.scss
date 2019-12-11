@@ -4,8 +4,9 @@
   display: flex;
   background-color: $card_bg-color;
   color: $card_text-color;
-  max-width: 60%;
-  padding: 30px;
+  padding: 0 30px;
+  position: relative;
+  z-index: 3;
   img{
     height: 25em;
     padding-right: 4em;
