@@ -5,6 +5,7 @@ import SearchBy from "../Components/searchBy/search";
 import CardContainer from "../Components/cardContainer/cardContainer";
 import MovieCard from "../Components/movieCard/movieCard";
 import SearchResultString from "../Components/searchResultString/searchResult";
+import NoResults from "../Components/notFound/notFound";
 
 function SearchPage({film}) {
 
@@ -22,17 +23,18 @@ function SearchPage({film}) {
           <SearchBy name_One = 'RELEASE DATE' name_Two = 'RATING' title='SORT BY'/>
         </section>
         <section className='cards-section'>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
-          <CardContainer {...film}/>
+          <NoResults/>
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
+          {/*<CardContainer {...film}/>*/}
         </section>
       </main>
   );

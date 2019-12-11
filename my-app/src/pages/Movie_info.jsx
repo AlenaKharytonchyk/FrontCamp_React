@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBy from "../Components/searchBy/search";
 import CardContainer from "../Components/cardContainer/cardContainer";
 import MovieCard from "../Components/movieCard/movieCard";
+import SearchResultBy from "../Components/searchResult_forMovie_page/searchResultBy";
 
 function MovieInfo({film}) {
 
@@ -10,8 +11,8 @@ function MovieInfo({film}) {
       <header>
         <MovieCard {...film}/>
       </header>
-      <section className='search-by'>7 movies found
-        <SearchBy name_One = 'RELEASE DATE' name_Two = 'RATING' title='SORT BY'/>
+      <section className='search-by'>
+        <SearchResultBy/>
       </section>
       <section className='cards-section'>
         <CardContainer {...film}/>
