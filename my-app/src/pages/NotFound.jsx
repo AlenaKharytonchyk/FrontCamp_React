@@ -3,7 +3,6 @@ import SearchForm from "../Components/searchForm/searchForm";
 import TitleText from "../Components/titleText/title";
 import SearchBy from "../Components/searchBy/search";
 import NoResults from "../Components/notFound/notFound";
-import Footer from "../Components/footer/footer";
 import PageContainer from "../Components/headerFooter/headerFooter";
 
 function NotFound() {
@@ -15,7 +14,7 @@ function NotFound() {
           <div className='header'>
             <TitleText/>
             <SearchForm/>
-            <SearchBy name_One = 'TITLE' name_Two = 'GENRE' title='SEARCH BY'/>
+            <SearchBy name_One = 'TITLE' name_Two = 'GENRE' title = 'SEARCH BY'/>
           </div>
         </header>
         <section className='search-by'>
