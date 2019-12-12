@@ -4,11 +4,12 @@ import TitleText from "../Components/titleText/title";
 import SearchBy from "../Components/searchBy/search";
 import CardContainer from "../Components/cardContainer/cardContainer";
 import SearchResultString from "../Components/searchResultString/searchResult";
-import Footer from "../Components/footer/footer";
+import PageContainer from "../Components/headerFooter/headerFooter";
 
 function SearchPage({movies}) {
 
    return (
+     <PageContainer>
       <main className='main-container'>
         <header>
           <div className='header'>
@@ -24,8 +25,8 @@ function SearchPage({movies}) {
         <section className='cards-section'>
           {movies.map(movie => <CardContainer key={movie.id} {...movie}/>)}
         </section>
-        <Footer/>
       </main>
+     </PageContainer>
   );
 }
 

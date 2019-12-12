@@ -3,6 +3,9 @@ import './App.scss';
 import MovieInfo from "./pages/Movie_info";
 import SearchPage from "./pages/Search";
 import NotFound from "./pages/NotFound";
+import PanicButton from "./Components/panicBtn/panicButton";
+import ErrorBoundary from "./Components/ErrorBoundry/errorBoundry";
+import PageContainer from "./Components/headerFooter/headerFooter";
 
 class App extends React.Component{
   constructor(props){
@@ -19,13 +22,18 @@ class App extends React.Component{
   render () {
     const {movies} = this.state;
     return (
-    <div className="App">
-    <SearchPage movies={movies}/>
-    <div className='temp-devider'></div>
-    <MovieInfo movies={movies}/>
-    <div className='temp-devider'></div>
-    <NotFound/>
-    </div>
+      <div className="App">
+          <ErrorBoundary>
+            <SearchPage movies={movies}/>
+            <div className='temp-devider'></div>
+            <MovieInfo movies={movies}/>
+            <div className='temp-devider'></div>
+            <NotFound/>
+            {/*<PanicButton/>*/}
+          </ErrorBoundary>
+      </div>
+
+
   );
 }
 
