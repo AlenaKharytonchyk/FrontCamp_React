@@ -5,13 +5,14 @@ import SearchBy from "../Components/searchBy/search";
 import CardContainer from "../Components/cardContainer/cardContainer";
 import SearchResultString from "../Components/searchResultString/searchResult";
 import PageContainer from "../Components/headerFooter/headerFooter";
+import background from '../media/collage_.png'
 
 function SearchPage({movies}) {
 
    return (
      <PageContainer>
       <main className='main-container'>
-        <header>
+        <header style={{backgroundImage: `url(${background})`}} >
           <div className='header'>
             <TitleText/>
             <SearchForm/>

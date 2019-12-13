@@ -3,6 +3,7 @@ import CardContainer from "../Components/cardContainer/cardContainer";
 import MovieCard from "../Components/movieCard/movieCard";
 import SearchResultBy from "../Components/searchResult_forMovie_page/searchResultBy";
 import PageContainer from "../Components/headerFooter/headerFooter";
+import background from '../media/collage_.png'
 
 function MovieInfo({movies}) {
   const [movie] = movies;
@@ -16,7 +17,7 @@ function MovieInfo({movies}) {
   return (
     <PageContainer>
       <main className='main-container'>
-        <header>
+        <header style={{backgroundImage: `url(${background})`}} >
           <MovieCard {...movie}/>
         </header>
         <section className='search-by'>

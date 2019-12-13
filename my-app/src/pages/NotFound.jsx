@@ -4,13 +4,14 @@ import TitleText from "../Components/titleText/title";
 import SearchBy from "../Components/searchBy/search";
 import NoResults from "../Components/notFound/notFound";
 import PageContainer from "../Components/headerFooter/headerFooter";
+import background from '../media/collage_.png'
 
 function NotFound() {
 
   return (
     <PageContainer>
       <main className='main-container'>
-        <header>
+        <header style={{backgroundImage: `url(${background})`}} >
           <div className='header'>
             <TitleText/>
             <SearchForm/>
