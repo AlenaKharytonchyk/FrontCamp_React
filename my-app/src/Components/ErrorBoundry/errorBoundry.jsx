@@ -6,7 +6,7 @@ class ErrorBoundary extends React.Component {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div>
-          <img src="../../media/oops.png" alt="Something went wrong!"/>
+          <img src="../../media/oops.png" alt="Something went wrong!" />
         </div>
       );
     }

@@ -1,11 +1,13 @@
 import React from 'react';
-import './movieCard.scss'
+import './movieCard.scss';
 
 const MovieCard = (props) => {
-  const {poster_path, title, id, release_date, vote_average, runtime, overview} = props;
+  const {
+    poster_path, title, id, release_date, vote_average, runtime, overview,
+  } = props;
   return (
-    <div className="movie-container" id = {id}>
-      <img src={poster_path} alt={title}/>
+    <div className="movie-container" id={id}>
+      <img src={poster_path} alt={title} />
       <section>
         <div className="title-section">
           <span className="title">{title}</span>
