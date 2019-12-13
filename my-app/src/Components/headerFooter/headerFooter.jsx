@@ -13,8 +13,8 @@ class PageContainer extends React.Component {
 
     return (
       <>
-      <header className='page-container'>
-        <section className='page'>
+      <header className="page-container">
+        <section className="page">
           <span>netflix</span>
           <span>roulette</span>
         </section>

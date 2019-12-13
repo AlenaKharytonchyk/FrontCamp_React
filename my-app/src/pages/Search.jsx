@@ -7,28 +7,28 @@ import SearchResultString from "../Components/searchResultString/searchResult";
 import PageContainer from "../Components/headerFooter/headerFooter";
 import background from '../media/collage_.png'
 
-function SearchPage({movies}) {
+const SearchPage = ({movies}) => {
 
    return (
      <PageContainer>
-      <main className='main-container'>
+      <main className="main-container">
         <header style={{backgroundImage: `url(${background})`}} >
-          <div className='header'>
+          <div className="header">
             <TitleText/>
             <SearchForm/>
             <SearchBy name_One = 'TITLE' name_Two = 'GENRE' title='SEARCH BY'/>
           </div>
         </header>
-        <section className='search-by'>
+        <section className="search-by">
           <SearchResultString resultAmount={movies.length}/>
           <SearchBy name_One = 'RELEASE DATE' name_Two = 'RATING' title='SORT BY'/>
         </section>
-        <section className='cards-section'>
+        <section className="cards-section">
           {movies.map(movie => <CardContainer key={movie.id} {...movie}/>)}
         </section>
       </main>
      </PageContainer>
   );
-}
+};
 
 export default SearchPage;

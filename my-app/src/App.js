@@ -25,9 +25,9 @@ class App extends React.Component{
       <div className="App">
           <ErrorBoundary>
             <SearchPage movies={movies}/>
-            <div className='temp-devider'></div>
+            <div className="temp-devider"></div>
             <MovieInfo movies={movies}/>
-            <div className='temp-devider'></div>
+            <div className="temp-devider"></div>
             <NotFound/>
             {/*<PanicButton/>*/}
           </ErrorBoundary>

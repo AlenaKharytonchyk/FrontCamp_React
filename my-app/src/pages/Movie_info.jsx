@@ -5,7 +5,7 @@ import SearchResultBy from "../Components/searchResult_forMovie_page/searchResul
 import PageContainer from "../Components/headerFooter/headerFooter";
 import background from '../media/collage_.png'
 
-function MovieInfo({movies}) {
+const MovieInfo = ({movies}) => {
   const [movie] = movies;
   // const movie = movies.find(movie => movie.genres.length);
   if(!movie){
@@ -16,20 +16,20 @@ function MovieInfo({movies}) {
   console.log(sameGenreMovies);
   return (
     <PageContainer>
-      <main className='main-container'>
+      <main className="main-container">
         <header style={{backgroundImage: `url(${background})`}} >
           <MovieCard {...movie}/>
         </header>
-        <section className='search-by'>
+        <section className="search-by">
           <SearchResultBy value={movie.genres.join(' & ')}/>
         </section>
-        <section className='cards-section'>
+        <section className="cards-section">
           {/*{movies.map(elem => <CardContainer {...elem}/>)}*/}
           {sameGenreMovies.map(elem => <CardContainer key={movie.id + '-info'} {...elem}/>)}
         </section>
       </main>
     </PageContainer>
   );
-}
+};
 
 export default MovieInfo;
