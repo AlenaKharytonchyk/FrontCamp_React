@@ -12,7 +12,8 @@ class SearchForm extends React.Component {
   }
 
   onSubmit(event) {
-    // alert(`${this.state.search}, good choice!`);
+    const { click } = this.props;
+    click({ searchBy: 'TITLE', search: this.state.search });
     event.preventDefault();
   }
 

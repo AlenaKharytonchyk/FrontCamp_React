@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import SearchForm from '../Components/searchForm/searchForm';
 import TitleText from '../Components/titleText/title';
 import SearchBy from '../Components/searchBy/search';
@@ -8,13 +9,13 @@ import SearchResultString from '../Components/searchResultString/searchResult';
 import PageContainer from '../Components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
 
-const SearchPage = ({ movies }) => (
+const SearchPage = ({ movies, onSearch }) => (
   <PageContainer>
     <main className="main-container">
       <header style={{ backgroundImage: `url(${background})` }}>
         <div className="header">
           <TitleText />
-          <SearchForm />
+          <SearchForm click={onSearch} />
           <SearchBy name_One="TITLE" name_Two="GENRE" title="SEARCH BY" />
         </div>
       </header>
@@ -30,7 +31,22 @@ const SearchPage = ({ movies }) => (
 );
 
 SearchPage.propTypes = {
-  movies: PropTypes.shape().isRequired,
+  movies: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
-export default SearchPage;
+function mapState(state) {
+  return { movies: state.movies };
+}
+
+function mapDispatch(dispatch) {
+  return {
+    onSearch({ searchBy, search }) {
+      fetch(`https://reactjs-cdp.herokuapp.com/movies?searchBy=${searchBy}&search=${search}`)
+        .then((req) => req.json())
+        .then(({ data }) => dispatch({ type: 'searchResults', movies: data }));
+    },
+  };
+}
+
+// Connect them:
+export default connect(mapState, mapDispatch)(SearchPage);
