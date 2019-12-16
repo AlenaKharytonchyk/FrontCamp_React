@@ -1,0 +1,21 @@
+@import '../../mixins';
+
+.page-container{
+  background: $footer_bg-color;
+  color: $numbers-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  span:first-child{
+    font-weight: 700;
+  }
+  .page{
+    margin-left: 2em;
+  }
+  svg{
+      margin-left: auto;
+      margin-right: 2em;
+    cursor: pointer;
+  }
+}

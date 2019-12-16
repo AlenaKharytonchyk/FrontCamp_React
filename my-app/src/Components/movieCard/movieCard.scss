@@ -1,0 +1,62 @@
+@import '../../mixins';
+
+.movie-container{
+  display: flex;
+  color: $card_text-color;
+  padding: 0 30px;
+  position: relative;
+  z-index: 3;
+  width: 80%;
+  img{
+    height: 25em;
+    padding-right: 4em;
+  }
+  .title-section{
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    text-align: left;
+    .title{
+      padding-right: 1em;
+    }
+    .rate {
+      display:inline-block;
+      line-height:0px;
+      border-radius:50%;
+      border:2px solid $rate-border-color;
+      font-size:32px;
+
+      span {
+        display:inline-block;
+        padding-top:50%;
+        padding-bottom:50%;
+        margin-left:8px;
+        margin-right:8px;
+        color: $rate-text-color;
+        font-family: Arial, sans-serif;
+      }
+    }
+  }
+  .number-block{
+    display: flex;
+    section{
+      padding-right: 40px;
+    }
+    .number{
+      color: $numbers-color;
+      font-size: 1.5em;
+      padding-right: 10px;
+    }
+    .text{
+      color: $card_text-color;
+    }
+  }
+  .overview{
+    text-align: justify;
+  }
+  &>section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

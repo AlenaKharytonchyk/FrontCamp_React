@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "rules": {
+    "max-len": [1, 140, 2, {"ignoreComments": true}],
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "off",
+    "class-methods-use-this": "off",
+    "react/destructuring-assignment": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "camelcase": "off",
+    "react/prefer-stateless-function": "off"
+
+  },
+  "env": {
+    "browser": true
+  }
+}
