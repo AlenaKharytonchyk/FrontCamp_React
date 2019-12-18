@@ -9,19 +9,21 @@ import SearchResultString from '../Components/searchResultString/searchResult';
 import PageContainer from '../Components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
 
-const SearchPage = ({ movies, onSearch }) => (
+const SearchPage = ({
+  movies, onSearch, onSearchByChange, searchBy, onSortByChange, sortBy,
+}) => (
   <PageContainer>
     <main className="main-container">
       <header style={{ backgroundImage: `url(${background})` }}>
         <div className="header">
           <TitleText />
-          <SearchForm click={onSearch} />
-          <SearchBy name_One="TITLE" name_Two="GENRE" title="SEARCH BY" />
+          <SearchForm click={onSearch} selected={searchBy} />
+          <SearchBy name_One="TITLE" name_Two="GENRE" title="SEARCH BY" onClick={onSearchByChange} selected={searchBy} />
         </div>
       </header>
       <section className="search-by">
         <SearchResultString resultAmount={movies.length} />
-        <SearchBy name_One="RELEASE DATE" name_Two="RATING" title="SORT BY" />
+        <SearchBy name_One="RELEASE DATE" name_Two="RATING" title="SORT BY" onClick={onSortByChange} selected={sortBy} />
       </section>
       <section className="cards-section">
         {movies.map((movie) => <CardContainer key={movie.id} {...movie} />)}
@@ -35,7 +37,7 @@ SearchPage.propTypes = {
 };
 
 function mapState(state) {
-  return { movies: state.movies };
+  return { movies: state.movies, searchBy: state.searchBy };
 }
 
 function mapDispatch(dispatch) {
@@ -44,6 +46,12 @@ function mapDispatch(dispatch) {
       fetch(`https://reactjs-cdp.herokuapp.com/movies?searchBy=${searchBy}&search=${search}`)
         .then((req) => req.json())
         .then(({ data }) => dispatch({ type: 'searchResults', movies: data }));
+    },
+    onSearchByChange(searchBy) {
+      dispatch({ type: 'searchBy', searchBy });
+    },
+    onSortByChange(sortBy) {
+      dispatch({ type: 'sortBy', sortBy });
     },
   };
 }

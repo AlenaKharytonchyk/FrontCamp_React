@@ -2,60 +2,50 @@ import React from 'react';
 import './search.scss';
 
 class SearchBy extends React.Component {
-  constructor(props) {
-    super(props);
-    const { name_One, name_Two, title } = props;
-    this.title = title;
-    this.name_One = name_One;
-    this.name_Two = name_Two;
-
-    this.state = { selectedOption: '' };
-    this.radioChange = this.radioChange.bind(this);
-  }
-
-  radioChange(event) {
-    this.setState({ selectedOption: event.currentTarget.value });
-  }
-
   render() {
+    const {
+      name_One, name_Two, title, onClick, selected,
+    } = this.props;
     let className_One = '';
     let className_Two = '';
-    switch (this.state.selectedOption) {
+    switch (selected) {
       default:
-      case this.name_One:
+      case name_One:
         className_One = 'active';
         className_Two = '';
         break;
-      case this.name_Two:
+      case name_Two:
         className_One = '';
         className_Two = 'active';
         break;
     }
 
+    const onChange = ({ currentTarget }) => { onClick(currentTarget.value); };
+
     return (
       <p>
-        <span>{this.title}</span>
-        <label className={`selectBtn right_borderRadius ${className_One}`} htmlFor={this.name_One}>{this.name_One}</label>
+        <span>{title}</span>
+        <label className={`selectBtn right_borderRadius ${className_One}`} htmlFor={name_One}>{name_One}</label>
         <input
-          id={this.name_One}
+          id={name_One}
           type="radio"
-          value={this.name_One}
-          checked={this.state.selectedOption === this.name_One}
-          onChange={this.radioChange}
+          value={name_One}
+          checked={selected === name_One}
+          onChange={onChange}
         />
 
         <label
           className={`selectBtn left_borderRadius ${className_Two}`}
-          htmlFor={this.name_Two}
+          htmlFor={name_Two}
         >
-          {this.name_Two}
+          {name_Two}
         </label>
         <input
-          id={this.name_Two}
+          id={name_Two}
           type="radio"
-          value={this.name_Two}
-          checked={this.state.selectedOption === this.name_Two}
-          onChange={this.radioChange}
+          value={name_Two}
+          checked={selected === name_Two}
+          onChange={onChange}
         />
 
       </p>

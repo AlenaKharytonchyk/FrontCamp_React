@@ -13,8 +13,8 @@ const MovieInfo = ({ movies }) => {
     return null;
   }
 
-  const sameGenreMovies = movies.filter(({ id, genres }) => movie.id !== id && movie.genres.filter((genre) => genres.includes(genre)).length);
-  console.log(sameGenreMovies);
+  const sameGenreMovies = movies.filter(({ id, genres }) => movie.id !== id && movie.genres
+    .filter((genre) => genres.includes(genre)).length);
   return (
     <PageContainer>
       <main className="main-container">
