@@ -1,4 +1,5 @@
 import React from 'react';
+import qs from 'query-string';
 import SubmitButton from '../submitBtn/submitBtn';
 import './searchForm.scss';
 
@@ -6,14 +7,29 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { search: '' };
-
     this.onChangeSearch = this.onChangeSearch.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.click({});
+  }
+
+  componentDidUpdate(prevProps) {
+    const { search, searchBy } = qs.parse(this.props.location.search);
+    const { search: prevSearch, searchBy: prevSearchBy } = qs.parse(prevProps.location.search);
+
+    if (search !== prevSearch || searchBy !== prevSearchBy) {
+      this.props.click({ searchBy, search });
+    }
+  }
+
   onSubmit(event) {
-    const { click, selected } = this.props;
-    click({ searchBy: selected || 'TITLE', search: this.state.search });
+    const { selected } = this.props;
+    this.props.history.push({
+      pathname: '/search',
+      search: `search=${this.state.search}&searchBy=${selected === 'GENRE' ? 'genres' : 'title'}`,
+    });
     event.preventDefault();
   }
 
@@ -35,7 +51,9 @@ class SearchForm extends React.Component {
             />
           </label>
         </div>
-        <div className="search-btn"><SubmitButton name="SEARCH" className="button active" /></div>
+        <div className="search-btn">
+          <SubmitButton name="SEARCH" className="button active" />
+        </div>
       </form>
     );
   }
