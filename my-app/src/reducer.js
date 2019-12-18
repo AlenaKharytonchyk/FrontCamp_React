@@ -1,4 +1,4 @@
-function movieApp(state = { movies: [] }, action) {
+function movieApp(state = { movies: [], commonMovies: [] }, action) {
   switch (action.type) {
     case 'searchResults':
       return { ...state, movies: action.movies };
@@ -6,6 +6,10 @@ function movieApp(state = { movies: [] }, action) {
       return { ...state, searchBy: action.searchBy };
     case 'sortBy':
       return { ...state, sortBy: action.sortBy };
+    case 'getMovie':
+      return { ...state, movie: action.movie };
+    case 'getCommonMovies':
+      return { ...state, commonMovies: action.commonMovies };
     default:
       return state;
   }

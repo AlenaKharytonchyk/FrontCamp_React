@@ -4,29 +4,29 @@ import { connect } from 'react-redux';
 import SearchForm from '../Components/searchForm/searchForm';
 import TitleText from '../Components/titleText/title';
 import SearchBy from '../Components/searchBy/search';
-import CardContainer from '../Components/cardContainer/cardContainer';
 import SearchResultString from '../Components/searchResultString/searchResult';
 import PageContainer from '../Components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
+import MovieList from '../Components/movieList/movieList';
 
 const SearchPage = ({
-  movies, onSearch, onSearchByChange, searchBy, onSortByChange, sortBy,
+  movies, onSearch, onSearchByChange, searchBy, onSortByChange, sortBy, ...other
 }) => (
   <PageContainer>
     <main className="main-container">
       <header style={{ backgroundImage: `url(${background})` }}>
         <div className="header">
           <TitleText />
-          <SearchForm click={onSearch} selected={searchBy} />
-          <SearchBy name_One="TITLE" name_Two="GENRE" title="SEARCH BY" onClick={onSearchByChange} selected={searchBy} />
+          <SearchForm click={onSearch} selected={searchBy} {...other} />
+          <SearchBy name_One="TITLE" name_Two="GENRE" title="SEARCH BY" onClick={onSearchByChange} selected={searchBy || 'TITLE'} />
         </div>
       </header>
       <section className="search-by">
         <SearchResultString resultAmount={movies.length} />
-        <SearchBy name_One="RELEASE DATE" name_Two="RATING" title="SORT BY" onClick={onSortByChange} selected={sortBy} />
+        <SearchBy name_One="RELEASE DATE" name_Two="RATING" title="SORT BY" onClick={onSortByChange} selected={sortBy || 'RELEASE DATE'} />
       </section>
       <section className="cards-section">
-        {movies.map((movie) => <CardContainer key={movie.id} {...movie} />)}
+        <MovieList sortBy={sortBy || 'RELEASE DATE'} movies={movies} />
       </section>
     </main>
   </PageContainer>
@@ -37,7 +37,7 @@ SearchPage.propTypes = {
 };
 
 function mapState(state) {
-  return { movies: state.movies, searchBy: state.searchBy };
+  return { movies: state.movies, searchBy: state.searchBy, sortBy: state.sortBy };
 }
 
 function mapDispatch(dispatch) {

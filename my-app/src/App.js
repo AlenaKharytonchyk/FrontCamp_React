@@ -6,34 +6,21 @@ import SearchPage from './pages/Search';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './Components/ErrorBoundry/errorBoundry';
 
-class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { movies: [] };
-  // }
-  //
-  // componentDidMount() {
-  //   fetch('https://reactjs-cdp.herokuapp.com/movies?limit=30')
-  //     .then((req) => req.json())
-  //     .then(({ data }) => this.setState({ movies: data }));
-  // }
-
-  render() {
-    // const { movies } = this.state;
-    return (
-      <Router>
-        <div className="App">
-          <ErrorBoundary>
-            <Switch>
-              <Route path="/" component={SearchPage} />
-              <Route path="/film/:id" component={MovieInfo} />
-              <Route component={NotFound} />
-            </Switch>
-          </ErrorBoundary>
-        </div>
-      </Router>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <ErrorBoundary>
+          <Switch>
+            <Route path="/film/:id" component={MovieInfo} />
+            <Route path="/search" component={SearchPage} />
+            <Route exact path="/" component={SearchPage} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </ErrorBoundary>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

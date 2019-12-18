@@ -5,10 +5,7 @@ const SearchResultBy = (props) => {
   const { value } = props;
   return (
     <span className="result-amount">
-Films by
-      {value}
-      {' '}
-Genre
+      {`Films by ${value} Genre`}
     </span>
   );
 };

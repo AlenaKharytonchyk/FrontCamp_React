@@ -7,6 +7,10 @@
     width: 100%;
     height: 100%;
 
+  a {
+    text-decoration: none;
+  }
+
   .main-container{
     display: grid;
     grid-template-rows: 25em 4em auto 4em;
