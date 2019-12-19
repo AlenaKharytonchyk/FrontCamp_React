@@ -1,6 +1,6 @@
 import React from 'react';
-import qs from 'query-string';
-import SubmitButton from '../submitBtn/submitBtn';
+import qs from 'query-string/index';
+import SubmitButton from '../../shared_components/submitBtn/submitBtn';
 import './searchForm.scss';
 
 class SearchForm extends React.Component {

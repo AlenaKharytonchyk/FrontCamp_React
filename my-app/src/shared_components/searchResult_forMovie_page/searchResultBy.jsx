@@ -1,5 +1,5 @@
 import React from 'react';
-import '../searchResultString/searchResult.scss';
+import '../../presentational_components/searchResultString/searchResult.scss';
 
 const SearchResultBy = (props) => {
   const { value } = props;

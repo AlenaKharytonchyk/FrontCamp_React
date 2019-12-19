@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MovieInfo from './pages/Movie_info';
-import SearchPage from './pages/Search';
-import NotFound from './pages/NotFound';
-import ErrorBoundary from './Components/ErrorBoundry/errorBoundry';
+import MovieInfo from './container_components/Movie_info';
+import SearchPage from './container_components/Search';
+import NotFound from './presentational_components/NotFound';
+import ErrorBoundary from './shared_components/ErrorBoundry/errorBoundry';
 
 function App() {
   return (

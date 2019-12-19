@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SearchForm from '../Components/searchForm/searchForm';
-import TitleText from '../Components/titleText/title';
-import SearchBy from '../Components/searchBy/search';
-import SearchResultString from '../Components/searchResultString/searchResult';
-import PageContainer from '../Components/headerFooter/headerFooter';
+import SearchForm from '../presentational_components/searchForm/searchForm';
+import TitleText from '../presentational_components/titleText/title';
+import SearchBy from '../shared_components/searchBy/search';
+import SearchResultString from '../presentational_components/searchResultString/searchResult';
+import PageContainer from '../shared_components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
-import MovieList from '../Components/movieList/movieList';
+import MovieList from '../presentational_components/movieList/movieList';
 import { searchResults, searchResultsBy, sortResultsBy } from '../actions';
 
 const SearchPage = ({

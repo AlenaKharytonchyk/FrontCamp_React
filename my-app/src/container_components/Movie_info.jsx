@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MovieCard from '../Components/movieCard/movieCard';
-import SearchResultBy from '../Components/searchResult_forMovie_page/searchResultBy';
-import PageContainer from '../Components/headerFooter/headerFooter';
+import MovieCard from '../presentational_components/movieCard/movieCard';
+import SearchResultBy from '../shared_components/searchResult_forMovie_page/searchResultBy';
+import PageContainer from '../shared_components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
-import MovieList from '../Components/movieList/movieList';
+import MovieList from '../presentational_components/movieList/movieList';
 
 class MovieInfo extends Component {
   componentDidMount() {
