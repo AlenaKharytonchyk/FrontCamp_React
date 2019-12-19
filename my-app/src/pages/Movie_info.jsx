@@ -72,5 +72,4 @@ function mapDispatch(dispatch) {
   };
 }
 
-// Connect them:
 export default connect(mapState, mapDispatch)(MovieInfo);
