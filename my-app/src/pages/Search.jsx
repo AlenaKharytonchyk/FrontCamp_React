@@ -8,6 +8,7 @@ import SearchResultString from '../Components/searchResultString/searchResult';
 import PageContainer from '../Components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
 import MovieList from '../Components/movieList/movieList';
+import { searchResults, searchResultsBy, sortResultsBy } from '../actions';
 
 const SearchPage = ({
   movies, onSearch, onSearchByChange, searchBy, onSortByChange, sortBy, ...other
@@ -45,13 +46,13 @@ function mapDispatch(dispatch) {
     onSearch({ searchBy, search }) {
       fetch(`https://reactjs-cdp.herokuapp.com/movies?searchBy=${searchBy}&search=${search}`)
         .then((req) => req.json())
-        .then(({ data }) => dispatch({ type: 'searchResults', movies: data }));
+        .then(({ data }) => dispatch(searchResults(data)));
     },
     onSearchByChange(searchBy) {
-      dispatch({ type: 'searchBy', searchBy });
+      dispatch(searchResultsBy(searchBy));
     },
     onSortByChange(sortBy) {
-      dispatch({ type: 'sortBy', sortBy });
+      dispatch(sortResultsBy(sortBy));
     },
   };
 }
