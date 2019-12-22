@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import MovieCard from '../presentational_components/movieCard/movieCard';
+import MovieCard from './movieCard/movieCard';
 import SearchResultBy from '../shared_components/searchResult_forMovie_page/searchResultBy';
 import PageContainer from '../shared_components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
-import MovieList from '../presentational_components/movieList/movieList';
+import MovieList from './movieList/movieList';
 
 class MovieInfo extends Component {
   componentDidMount() {
@@ -53,23 +52,4 @@ class MovieInfo extends Component {
   }
 }
 
-function mapState({ commonMovies, movie }) {
-  return { commonMovies, movie };
-}
-
-function mapDispatch(dispatch) {
-  return {
-    getMovie({ id }) {
-      fetch(`https://reactjs-cdp.herokuapp.com/movies/${id}`)
-        .then((req) => req.json())
-        .then((movie) => dispatch({ type: 'getMovie', movie }));
-    },
-    getCommonMovies({ genres = [] }) {
-      fetch(`https://reactjs-cdp.herokuapp.com/movies/?filter=${genres.join(',')}`)
-        .then((req) => req.json())
-        .then(({ data }) => dispatch({ type: 'getCommonMovies', commonMovies: data }));
-    },
-  };
-}
-
-export default connect(mapState, mapDispatch)(MovieInfo);
+export default MovieInfo;

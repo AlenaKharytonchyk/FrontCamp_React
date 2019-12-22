@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import SearchForm from '../presentational_components/searchForm/searchForm';
-import TitleText from '../presentational_components/titleText/title';
+import SearchForm from './searchForm/searchForm';
+import TitleText from './titleText/title';
 import SearchBy from '../shared_components/searchBy/search';
-import SearchResultString from '../presentational_components/searchResultString/searchResult';
+import SearchResultString from './searchResultString/searchResult';
 import PageContainer from '../shared_components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
-import MovieList from '../presentational_components/movieList/movieList';
-import { searchResults, searchResultsBy, sortResultsBy } from '../actions';
+import MovieList from './movieList/movieList';
 
 const SearchPage = ({
   movies, onSearch, onSearchByChange, searchBy, onSortByChange, sortBy, ...other
@@ -37,24 +35,4 @@ SearchPage.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
-function mapState(state) {
-  return { movies: state.movies, searchBy: state.searchBy, sortBy: state.sortBy };
-}
-
-function mapDispatch(dispatch) {
-  return {
-    onSearch({ searchBy, search }) {
-      fetch(`https://reactjs-cdp.herokuapp.com/movies?searchBy=${searchBy}&search=${search}`)
-        .then((req) => req.json())
-        .then(({ data }) => dispatch(searchResults(data)));
-    },
-    onSearchByChange(searchBy) {
-      dispatch(searchResultsBy(searchBy));
-    },
-    onSortByChange(sortBy) {
-      dispatch(sortResultsBy(sortBy));
-    },
-  };
-}
-
-export default connect(mapState, mapDispatch)(SearchPage);
+export default SearchPage;
