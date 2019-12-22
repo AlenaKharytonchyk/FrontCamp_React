@@ -1,4 +1,5 @@
-function movieApp(state = { movies: [], commonMovies: [] }, action) {
+const initialState = { movies: [], commonMovies: [] };
+function movieApp(state = initialState, action) {
   switch (action.type) {
     case 'searchResults':
       return { ...state, movies: action.movies };
