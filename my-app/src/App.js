@@ -3,7 +3,7 @@ import './App.scss';
 import MovieInfo from './pages/Movie_info';
 import SearchPage from './pages/Search';
 import NotFound from './pages/NotFound';
-import PanicButton from './Components/panicBtn/panicButton';
+// import PanicButton from './Components/panicBtn/panicButton';
 import ErrorBoundary from './Components/ErrorBoundry/errorBoundry';
 
 class App extends React.Component {

@@ -5,7 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest --collectCoverage",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "keywords": [],
   "author": "",
@@ -16,8 +30,12 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-loader": "^3.0.3",
@@ -26,7 +44,11 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^5.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
+    "jest-html-reporter": "^2.8.0",
     "node-sass": "^4.13.0",
+    "react-addons-test-utils": "^15.6.2",
     "sass-loader": "^8.0.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.41.2",
@@ -37,6 +59,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "jest-enzyme": "^7.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
