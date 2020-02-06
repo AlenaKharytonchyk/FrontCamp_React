@@ -1,40 +1,26 @@
 import React from 'react';
 import './App.scss';
-import MovieInfo from './pages/Movie_info';
-import SearchPage from './pages/Search';
-import NotFound from './pages/NotFound';
-// import PanicButton from './Components/panicBtn/panicButton';
-import ErrorBoundary from './Components/ErrorBoundry/errorBoundry';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import MovieInfo from './container_components/Movie_info_container';
+import SearchPage from './container_components/Search_container';
+import NotFound from './presentational_components/NotFound';
+import ErrorBoundary from './shared_components/ErrorBoundry/errorBoundry';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { movies: [] };
-  }
-
-  componentDidMount() {
-    fetch('https://reactjs-cdp.herokuapp.com/movies?limit=30')
-      .then((req) => req.json())
-      .then(({ data }) => this.setState({ movies: data }));
-  }
-
-  render() {
-    const { movies } = this.state;
-    return (
+function App() {
+  return (
+    <Router>
       <div className="App">
         <ErrorBoundary>
-          <SearchPage movies={movies} />
-          <div className="temp-devider" />
-          <MovieInfo movies={movies} />
-          <div className="temp-devider" />
-          <NotFound />
-          {/* <PanicButton /> */}
+          <Switch>
+            <Route path="/film/:id" component={MovieInfo} />
+            <Route path="/search" component={SearchPage} />
+            <Route exact path="/" component={SearchPage} />
+            <Route path="*" component={NotFound} />
+          </Switch>
         </ErrorBoundary>
       </div>
-
-
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;

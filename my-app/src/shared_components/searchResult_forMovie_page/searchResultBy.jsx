@@ -1,14 +1,11 @@
 import React from 'react';
-import '../searchResultString/searchResult.scss';
+import '../../presentational_components/searchResultString/searchResult.scss';
 
 const SearchResultBy = (props) => {
   const { value } = props;
   return (
     <span className="result-amount">
-Films by
-      {value}
-      {' '}
-Genre
+      {`Films by ${value} Genre`}
     </span>
   );
 };

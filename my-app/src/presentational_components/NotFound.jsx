@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchForm from '../Components/searchForm/searchForm';
-import TitleText from '../Components/titleText/title';
-import SearchBy from '../Components/searchBy/search';
-import NoResults from '../Components/notFound/notFound';
-import PageContainer from '../Components/headerFooter/headerFooter';
+import SearchForm from './searchForm/searchForm';
+import TitleText from './titleText/title';
+import SearchBy from '../shared_components/searchBy/search';
+import NoResults from './notFound/notFound';
+import PageContainer from '../shared_components/headerFooter/headerFooter';
 import background from '../media/collage_.png';
 
 const NotFound = () => (
