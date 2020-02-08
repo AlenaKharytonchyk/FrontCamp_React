@@ -1,5 +1,5 @@
-import { searchResults, searchResultsBy, sortResultsBy } from './actions';
-import movieApp from './reducer';
+import { searchResults, searchResultsBy, sortResultsBy } from '../src/actions';
+import movieApp from '../src/reducer';
 
 describe('actions', () => {
   it('should create an action to add search results', () => {

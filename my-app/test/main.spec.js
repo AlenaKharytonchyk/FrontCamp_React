@@ -12,6 +12,16 @@ import PageContainer from "../src/shared_components/headerFooter/headerFooter";
 import SearchBy from "../src/shared_components/searchBy/search";
 import SubmitButton from "../src/shared_components/submitBtn/submitBtn";
 
+it('should render headerFooter component', function () {
+  const wrapper = shallow(
+    <PageContainer>
+      <span>Cild component</span>
+    </PageContainer>
+  )
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should render an search form', () => {
   const wrapper = shallow(
     <SearchForm click = {()=>{}}>Hello Jest!</SearchForm>

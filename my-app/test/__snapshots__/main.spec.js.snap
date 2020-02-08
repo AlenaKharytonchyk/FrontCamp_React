@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`When Search by is rendered should select first name when it is passed as selected 1`] = `ShallowWrapper {}`;
+
+exports[`When Search by is rendered should select second name when it is passed as selected 1`] = `ShallowWrapper {}`;
+
 exports[`When SearchResultBy is rendered should render as expected 1`] = `ShallowWrapper {}`;
 
 exports[`When footer is rendered should match snapshot 1`] = `ShallowWrapper {}`;
@@ -15,5 +19,7 @@ exports[`should render an search form 1`] = `ShallowWrapper {}`;
 exports[`should render card container with genres 1`] = `ShallowWrapper {}`;
 
 exports[`should render card container without genres 1`] = `ShallowWrapper {}`;
+
+exports[`should render headerFooter component 1`] = `ShallowWrapper {}`;
 
 exports[`should render movie card 1`] = `ShallowWrapper {}`;

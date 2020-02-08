@@ -8,7 +8,9 @@
     "build": "webpack --mode production",
     "test": "jest --collectCoverage",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "jest": {
     "setupFiles": [
