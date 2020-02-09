@@ -1,0 +1,3 @@
+lf		text
+-lf		-text
+lf=input	eol=lf

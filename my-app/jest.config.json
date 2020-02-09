@@ -1,0 +1,14 @@
+{
+  "setupFilesAfterEnv": ["./test/jestsetup.js"],
+  "moduleNameMapper": {
+    "\\.scss$": "identity-obj-proxy",
+    "\\.png$": "identity-obj-proxy"
+  },
+  "reporters": [
+    "default",
+    "jest-html-reporters",
+    ["./node_modules/jest-html-reporter", {
+      "includeConsoleLog": true
+    }]
+  ]
+}
