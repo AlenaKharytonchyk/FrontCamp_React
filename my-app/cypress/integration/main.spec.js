@@ -1,10 +1,9 @@
-context('Main Page', () => {
+context('Main Page - Search by title', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   });
 
   it('cy.title() - get the title', () => {
-    // https://on.cypress.io/title
     cy.title().should('include', 'React App')
   });
 
@@ -49,3 +48,36 @@ context('Main Page', () => {
     cy.url().should('eq', 'http://localhost:3000/');
   });
 });
+
+context('Main Page - search by genre', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000')
+  });
+
+  it('cy.title() - get the title', () => {
+    cy.title().should('include', 'React App')
+  });
+
+  it('should dispaly movie cards', () => {
+    cy.get('.card-container').should('have.length', 10);
+  });
+
+  it('should be able to use search', () => {
+    cy.get('label[for="GENRE"]').click();
+    cy.get('.search-field input').type('comedy');
+    cy.get('.search-btn input').click();
+
+    cy.url()
+      .should(
+        'include',
+        '/search?search=comedy&searchBy=genres'
+      );
+    cy.get('.card-container').should('be.visible').should('have.length', 10);
+
+    cy.get('.page-container')
+      .find('a').click();
+
+    cy.url().should('eq', 'http://localhost:3000/')
+  });
+  }
+);

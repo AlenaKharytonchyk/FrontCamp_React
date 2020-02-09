@@ -10,7 +10,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run --record --key 331f6aa6-adab-45cf-8c3f-c349c6b6d1a7"
   },
   "jest": {
     "setupFiles": [
